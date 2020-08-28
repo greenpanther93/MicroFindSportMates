@@ -1,0 +1,15 @@
+wrapper\IUserServiceImpl.class
+wrapper\IEvent.class
+com\findsportmates\controller\UserController.class
+wrapper\InstanceDatabase.class
+wrapper\IUserImpl.class
+com\findsportmates\controller\EventController.class
+wrapper\IUser.class
+wrapper\FrontendApp.class
+wrapper\EventTemplate.class
+wrapper\RestTemplateFormatter.class
+wrapper\BeanUtil.class
+wrapper\IEventServiceImpl.class
+wrapper\Proxy.class
+wrapper\IEventImpl.class
+wrapper\UserTemplate.class

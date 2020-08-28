@@ -1,0 +1,11 @@
+127.0.0.1 - - [18/Aug/2020:09:57:46 +0200] "GET /frontend/login HTTP/1.1" 404 979 http-bio-8080-exec-1 81
+127.0.0.1 - - [18/Aug/2020:09:57:46 +0200] "GET /favicon.ico HTTP/1.1" 404 973 http-bio-8080-exec-2 4
+127.0.0.1 - - [18/Aug/2020:09:57:50 +0200] "GET /login HTTP/1.1" 200 2472 http-bio-8080-exec-4 128
+127.0.0.1 - - [18/Aug/2020:09:57:50 +0200] "GET /webjars/bootstrap/3.3.6/css/bootstrap.min.css HTTP/1.1" 200 121260 http-bio-8080-exec-5 32
+127.0.0.1 - - [18/Aug/2020:09:57:50 +0200] "GET /resources/demos/style.css HTTP/1.1" 404 1001 http-bio-8080-exec-6 11
+127.0.0.1 - - [18/Aug/2020:09:57:54 +0200] "POST /login HTTP/1.1" 500 4550 http-bio-8080-exec-8 50
+127.0.0.1 - - [18/Aug/2020:10:01:25 +0200] "GET /login HTTP/1.1" 200 2472 http-bio-8080-exec-1 176
+127.0.0.1 - - [18/Aug/2020:10:01:26 +0200] "GET /resources/demos/style.css HTTP/1.1" 404 1001 http-bio-8080-exec-2 15
+127.0.0.1 - - [18/Aug/2020:10:01:28 +0200] "POST /login HTTP/1.1" 500 4550 http-bio-8080-exec-3 64
+127.0.0.1 - - [18/Aug/2020:10:22:50 +0200] "GET /login HTTP/1.1" 404 949 http-bio-8080-exec-1 71
+127.0.0.1 - - [18/Aug/2020:11:47:23 +0200] "GET /login HTTP/1.1" 500 15924 http-bio-8080-exec-1 1018

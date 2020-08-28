@@ -1,0 +1,76 @@
+version: '3'
+services:
+    eureka-server:
+        container_name:
+            eureka-container
+        image: springcloud/eureka
+        ports:
+            - "8761:8761"
+        networks:
+            - network-eureka
+#    findsportmates-frontend:
+#        container_name:
+#            findsportmates-frontend
+#        build: './frontend'
+#        ports:
+#            - "8080:8080"
+#        depends_on:
+#            - eureka-server
+#        environment:
+#            - SPRING_DATASOURCE_URL=jdbc:mysql://findsportmates-db:3306/FindSportMates?useSSL=false
+#            - SERVER_HTTP=http://eureka-server:8761/eureka
+#        networks:
+#            - network-eureka
+    findsportmates-event:
+        container_name:
+            findsportmates-event
+        build: './event'
+        ports:
+            - "8082:8082"
+        depends_on:
+            - eureka-server
+            - findsportmates-db
+        environment:
+            - SPRING_DATASOURCE_URL=jdbc:mysql://findsportmates-db:3306/FindSportMates?useSSL=false
+            - SERVER_HTTP=http://eureka-server:8761/eureka
+        networks:
+            - network-eureka
+    findsportmates-user:
+        container_name:
+            findsportmates-user
+        build: './user'
+        ports:
+            - "8083:8083"
+        depends_on:
+            - eureka-server
+            - findsportmates-db
+        environment:
+            - SPRING_DATASOURCE_URL=jdbc:mysql://findsportmates-db:3306/FindSportMates?useSSL=false
+            - SERVER_HTTP=http://eureka-server:8761/eureka
+        networks:
+            - network-eureka
+    findsportmates-db:
+        image: mysql:5.6
+        restart: always
+        environment:
+            MYSQL_DATABASE: "FindSportMates"
+            #MYSQL_USER: 'toto'
+            # You can use whatever password you like
+            #MYSQL_PASSWORD: '0000'
+            # Password for root access
+            MYSQL_ROOT_PASSWORD: '0000'
+        ports:
+            # <Port exposed> : < MySQL Port running inside container>
+            - '3306:3306'
+        expose:
+            # Opens port 3306 on the container
+            - '3306'
+        # Where our data will be persisted
+        volumes:
+            - C:\docker-storage\findsportmates:/var/lib/mysql
+        networks:
+            - network-eureka
+networks:
+    network-eureka:
+#volumes:
+#    my-db: C:\docker-storage\findsportmates
